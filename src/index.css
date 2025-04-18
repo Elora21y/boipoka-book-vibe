@@ -1,0 +1,21 @@
+#bar > .active button {
+    border-color: #23BE0A;
+    color: #23BE0A;
+}
+
+#bar .active button:hover {
+    background: #23BE0A;
+    color: white;
+}
+#res-bar .active button{
+    background-color: #23BE0A;
+    color: white;
+}
+
+
+th{
+    color: gray;
+}
+td {
+    padding: 5px;
+}
