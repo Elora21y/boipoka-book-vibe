@@ -2,9 +2,10 @@ import React from 'react';
 import { AiTwotoneFileText } from 'react-icons/ai';
 import { CiLocationOn } from 'react-icons/ci';
 import { GoPeople } from 'react-icons/go';
+import { NavLink } from 'react-router';
 
 const ReadList = ({ book }) => {
-    const { bookName, tags, rating, image, publisher, category, totalPages, yearOfPublishing, author } = book
+    const { bookName, tags, rating, image, publisher, category, totalPages, yearOfPublishing, author, bookId } = book
     return (
        <div className="border border-gray-300 rounded-lg mt-4">
          <div className='flex gap-6 items-center p-4 '>
@@ -34,7 +35,7 @@ const ReadList = ({ book }) => {
                <div className="md:flex gap-5 text-sm mt-2">
                 <button className='py-1 px-4 rounded-2xl text-[#328EFF] bg-[#328EFF15] font-medium' >Category: {category}</button>
                 <button className='py-1 px-4 rounded-2xl text-[#FFAC33] bg-[#FFAC3315] font-medium' >Rating: {rating}</button>
-                <button className='py-1 px-4 rounded-2xl text-white bg-[#23BE0A] font-medium' >View Details</button>
+               <NavLink to = {`/book-details/${bookId}`}> <button className='py-1 px-4 rounded-2xl text-white bg-[#23BE0A] font-medium cursor-pointer'>View Details</button></NavLink>
                </div>
             </div>
         </div>
