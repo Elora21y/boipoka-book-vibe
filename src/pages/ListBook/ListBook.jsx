@@ -71,13 +71,20 @@ const ListBook = () => {
             <div className="flex flex-col justify-center items-center mb-16">
                 <div className="dropdown ">
                     <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A] text-white hover:text-[#23BE0A] hover:bg-white hover:border-[#23BE0A]">Sort By {
-                        sorted ? `: ${sorted}` : <IoIosArrowDown size={20} />
-                    }</div>
+                        sorted && `: ${sorted}`  
+                    } <IoIosArrowDown size={20} /></div>
                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                         <li><a onClick={() => sortedType('Rating')}>Rating</a></li>
                         <li><a onClick={() => sortedType('Pages')}>Number of pages</a></li>
                         <li><a onClick={() => sortedType('Year')}>Publisher year</a></li>
                     </ul>
+
+                    {/* <select onClick={(e) => sortedType(e.target.value)} tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                        <option value=''><a >Sort By</a></option>
+                        <option value='Rating'><a >Rating</a></option>
+                        <option value='Pages'><a >Number of pages</a></option>
+                        <option value='Year'><a >Publisher year</a></option>
+                    </select> */}
                 </div>
             </div>
 

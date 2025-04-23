@@ -5,17 +5,20 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import BookDetails from "../pages/BookDetails/BookDetails";
 import ListBook from "../pages/ListBook/ListBook";
 import PageToRead from "../pages/PageToRead/PageToRead";
+import Loader from "../components/Loader";
 
 export const router = createBrowserRouter([
   {
     path: '/',
     errorElement: <ErrorPage></ErrorPage>,
+    hydrateFallbackElement : <Loader/>,
     Component: Root,
     children: [
       {
         index: true,
         path: '/',
-        loader: () => fetch('booksData.json'),
+        loader: () => fetch('/booksData.json'),
+        
         Component: Home
       },
       {
